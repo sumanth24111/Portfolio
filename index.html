@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Narisetty Sumanth – Portfolio</title>
+    
+
+    <meta
+      name="description"
+      content="Cybersecurity Enthusiast & Full‑Stack Developer – Portfolio"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/J6MdB8Hk6WvPp6bVZ8bKZOb6xQ6Y5Q5m0PZ6cG9E3c3W1hWbXGQm8m7Q7sJf2R1f0GJrJfWdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --bg-0: #0c1220; /* base */
+        --bg-1: #0f172a; /* cards */
+        --bg-2: #0b1022; /* darker */
+        --txt-0: #e6eaf3;
+        --txt-1: #b9c0d4;
+        --brand: #4f46e5; /* indigo */
+        --brand-2: #22d3ee; /* cyan */
+        --accent: #a78bfa; /* violet */
+        --muted: #1e293b;
+        --card: #111827;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --radius: 18px;
+        --shadow:
+          0 20px 50px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        --glow: 0 0 0 transparent;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Ubuntu,
+          "Helvetica Neue",
+          Arial,
+          "Noto Sans",
+          sans-serif;
+        color: var(--txt-0);
+        background:
+          radial-gradient(
+            1200px 600px at 30% -10%,
+            rgba(79, 70, 229, 0.25),
+            transparent 60%
+          ),
+          radial-gradient(
+            800px 400px at 90% 10%,
+            rgba(34, 211, 238, 0.18),
+            transparent 55%
+          ),
+          linear-gradient(180deg, var(--bg-0) 0%, #09101c 40%, #080e18 100%);
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+        border-radius: 14px;
+      }
+      .container {
+        width: min(1120px, 90%);
+        margin-inline: auto;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      /* Top Bar */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: saturate(140%) blur(10px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .brand .logo {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+      }
+      .nav a {
+        opacity: 0.9;
+      }
+      .nav .links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        box-shadow: var(--shadow);
+        color: var(--txt-0);
+      }
+      .btn:hover {
+        border-color: rgba(148, 163, 184, 0.3);
+        transform: translateY(-1px);
+      }
+      .btn.primary {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.9),
+          rgba(34, 211, 238, 0.9)
+        );
+        border: none;
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+      }
+      .btn.ghost {
+        background: transparent;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 86px 0 40px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 5.2vw, 56px);
+        line-height: 1.05;
+        margin: 10px 0 6px;
+      }
+      .hero h1 .thin {
+        font-weight: 700;
+        opacity: 0.95;
+      }
+      .hero .subtitle {
+        font-weight: 700;
+        font-size: clamp(20px, 2.5vw, 24px);
+        opacity: 0.85;
+      }
+      .hero p {
+        color: var(--txt-1);
+        max-width: 740px;
+        margin: 14px auto 26px;
+      }
+      .hero .cta {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .scroll-down {
+        margin-top: 32px;
+        opacity: 0.7;
+        font-size: 12px;
+      }
+
+      /* Section */
+      section {
+        padding: 40px 0;
+      }
+      .section-title {
+        display: grid;
+        justify-items: center;
+        margin-bottom: 18px;
+      }
+      .section-title h2 {
+        font-size: clamp(22px, 2.6vw, 28px);
+        font-weight: 800;
+      }
+      .section-title .underline {
+        width: 64px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        border-radius: 999px;
+      }
+
+      /* About */
+      .about {
+        grid-template-columns: 320px 1fr;
+        align-items: start;
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .card.pad {
+        padding: 18px;
+      }
+      .muted {
+        color: var(--txt-1);
+      }
+      .about .edu {
+        display: grid;
+        gap: 12px;
+      }
+      .edu-item {
+        padding: 12px;
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(148, 163, 184, 0.08);
+      }
+      .edu-item .title {
+        font-weight: 700;
+      }
+      .edu-item .meta {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 900px) {
+        .about {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Skills */
+      .skills .row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        border-radius: 12px;
+        background: rgba(17, 24, 39, 0.7);
+      }
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      @media (max-width: 1000px) {
+        .skills .row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .skills .row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Services */
+      .services .row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .service {
+        padding: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 16px;
+        background: rgba(17, 24, 39, 0.65);
+      }
+      .service h4 {
+        margin: 6px 0;
+      }
+      .service ul {
+        padding-left: 18px;
+        margin: 8px 0;
+        color: var(--txt-1);
+      }
+      @media (max-width: 1000px) {
+        .services .row {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 700px) {
+        .services .row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* CTA band */
+      .band {
+        margin-top: 12px;
+        padding: 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: linear-gradient(
+          90deg,
+          rgba(79, 70, 229, 0.15),
+          rgba(34, 211, 238, 0.1)
+        );
+      }
+      @media (max-width: 700px) {
+        .band {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      /* Portfolio */
+      .portfolio .row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .project {
+        display: grid;
+        grid-template-rows: 160px auto;
+        gap: 12px;
+        padding: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 16px;
+        background: rgba(17, 24, 39, 0.65);
+      }
+      .project .thumb {
+        height: 160px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2a2f45, #1a1f34);
+        position: relative;
+        overflow: hidden;
+      }
+      .flag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        background: rgba(34, 211, 238, 0.18);
+        border: 1px solid rgba(34, 211, 238, 0.35);
+      }
+      .project h4 {
+        margin: 0;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .chip {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        color: var(--txt-1);
+      }
+      @media (max-width: 900px) {
+        .portfolio .row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Contact */
+      .contact .grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .info-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        border-radius: 14px;
+        background: rgba(17, 24, 39, 0.65);
+      }
+      .info-item i {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      }
+      .form .field {
+        display: grid;
+        gap: 8px;
+      }
+      .form input,
+      .form textarea {
+        background: #0c1426;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        color: var(--txt-0);
+        padding: 12px 14px;
+        border-radius: 12px;
+        outline: none;
+      }
+      .form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      @media (max-width: 900px) {
+        .contact .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Footer */
+      footer {
+        font-size: 13px;
+        color: var(--txt-1);
+        padding: 30px 0;
+        border-top: 1px solid rgba(148, 163, 184, 0.12);
+        text-align: center;
+      }
+
+      /* Floating widgets */
+      .socials {
+        position: fixed;
+        right: 16px;
+        bottom: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .fab {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        backdrop-filter: blur(6px);
+      }
+      .fab:hover {
+        transform: translateY(-2px);
+      }
+      .top {
+        position: fixed;
+        right: 16px;
+        bottom: 86px;
+      }
+
+      /* Tooltip */
+      [data-tip] {
+        position: relative;
+      }
+      [data-tip]::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0b1223;
+        color: #cdd6f4;
+        font-size: 12px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+      }
+      [data-tip]:hover::after {
+        opacity: 1;
+      }
+
+      /* Experience */
+      .experience .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
+      .exp-item {
+        padding: 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        background: rgba(17, 24, 39, 0.65);
+        position: relative;
+      }
+
+      .exp-item h3 {
+        margin: 0 0 4px;
+      }
+
+      .exp-date {
+        font-size: 13px;
+        color: var(--brand-2);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .exp-item ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        color: var(--txt-1);
+      }
+    </style>
+    
+  </head>
+  <body>
+    <!-- Header / Nav -->
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#home" aria-label="Go to home">
+          <span class="logo"><i class="fa-solid fa-shield"></i></span>
+          <span>NS</span>
+        </a>
+        <nav class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+          <a class="btn ghost" href="mailto:sumanthnarisetty38@gmail.com"
+            ><i class="fa-regular fa-envelope"></i><span>Email</span></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="home" class="hero container">
+      <div class="cta" style="justify-content: flex-end; margin-bottom: 6px">
+        <a
+          class="fab"
+          data-tip="GitHub"
+          href="https://github.com/"
+          target="_blank"
+          rel="noreferrer"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a
+          class="fab"
+          data-tip="LinkedIn"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noreferrer"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+      </div>
+      <div>
+        <div class="subtitle">
+          Cybersecurity Enthusiast | Full‑Stack Developer
+        </div>
+        <h1><span class="thin">Narisetty</span> Sumanth</h1>
+        <p>
+          Passionate about securing systems and building powerful web
+          applications. Currently pursuing Computer Science with a focus on
+          cybersecurity and modern web technologies.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#portfolio"
+            ><i class="fa-solid fa-eye"></i>View My Work</a
+          >
+          <a class="btn" href="#contact"
+            ><i class="fa-regular fa-paper-plane"></i>Contact Me</a
+          >
+        </div>
+        <div class="scroll-down"><i class="fa-solid fa-angles-down"></i></div>
+      </div>
+    </main>
+
+    <!-- About -->
+    <section id="about" class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="grid about">
+        <div class="card pad">
+          <img src="images/photo.jpg" alt="Profile" />
+        </div>
+        <div class="grid" style="gap: 18px">
+          <div class="card pad">
+            <h3 style="margin: 0 0 8px">My Journey</h3>
+            <p class="muted">
+              I'm a dedicated computer science student with a strong passion for
+              cybersecurity and full‑stack development. My journey in technology
+              began with a curiosity about how systems work—and how to protect
+              them from emerging threats.
+            </p>
+            <p class="muted">
+              Currently pursuing my degree at AMC Engineering College, I'm
+              constantly refining my skills in both offensive and defensive
+              cybersecurity practices while building robust web applications
+              that solve real‑world problems.
+            </p>
+          </div>
+          <div class="card pad edu">
+            <h3 style="margin: 0">Education</h3>
+            <div class="edu-item">
+              <div class="title">AMC Engineering College</div>
+              <div class="meta">Bachelor of Technology • 2022–Present</div>
+            </div>
+            <div class="edu-item">
+              <div class="title">Narayana PU College</div>
+              <div class="meta">Intermediate Education • 2020–2022</div>
+            </div>
+            <div class="edu-item">
+              <div class="title">Vijayanagara High School</div>
+              <div class="meta">Secondary Education • 2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container skills">
+      <div class="section-title">
+        <h2>Skills & Technologies</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="grid row">
+        <div class="card pad">
+          <div class="badge">
+            <i class="fa-solid fa-code"></i><b>Programming Languages</b>
+          </div>
+          <div class="list">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">C</span>
+          </div>
+        </div>
+        <div class="card pad">
+          <div class="badge">
+            <i class="fa-solid fa-database"></i><b>Databases</b>
+          </div>
+          <div class="list">
+            <span class="chip">MySQL</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">SQLite</span>
+          </div>
+        </div>
+        <div class="card pad">
+          <div class="badge">
+            <i class="fa-solid fa-flask"></i><b>Technologies</b>
+          </div>
+          <div class="list">
+            <span class="chip">Django</span>
+            <span class="chip">Flask</span>
+            <span class="chip">React</span>
+            <span class="chip">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="card pad">
+          <div class="badge">
+            <i class="fa-solid fa-screwdriver-wrench"></i><b>Developer Tools</b>
+          </div>
+          <div class="list">
+            <span class="chip">Git</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Linux</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience -->
+    <section id="experience" class="container experience">
+      <div class="section-title">
+        <h2>Professional Experience</h2>
+        <div class="underline"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="exp-item">
+          <h3>Team Manager – Probe Partners India</h3>
+          <div class="exp-date">June 2025 – January 2026</div>
+          <ul>
+            <li>
+              Led and coordinated a performance-driven team ensuring smooth
+              workflow and goal alignment.
+            </li>
+            <li>
+              Delegated responsibilities, tracked progress, and ensured timely
+              delivery of high-quality outcomes.
+            </li>
+            <li>
+              Analyzed team performance metrics to identify improvement areas
+              and increase productivity.
+            </li>
+            <li>
+              Mentored team members through training, guidance, and constructive
+              feedback.
+            </li>
+            <li>
+              Collaborated with teams to streamline processes and improve
+              operational efficiency.
+            </li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <h3>
+            Trainee – CDL (CMS Digital Lounge), CMS Computers Pvt. Ltd.,
+            Bengaluru
+          </h3>
+          <div class="exp-date">January 2026 – Present</div>
+          <ul>
+            <li>
+              Gaining hands-on experience in digital and IT service
+              environments.
+            </li>
+            <li>
+              Supporting project execution including documentation, testing, and
+              technical implementation.
+            </li>
+            <li>
+              Working with industry tools, workflows, and professional best
+              practices.
+            </li>
+            <li>
+              Collaborating with team members to understand real-world technical
+              and business requirements.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="container portfolio">
+      <div class="section-title">
+        <h2>My Portfolio</h2>
+        <div class="underline"></div>
+        <p class="muted" style="text-align: center; max-width: 700px">
+          Showcase of innovative projects combining machine learning, web
+          development, and practical solutions.
+        </p>
+      </div>
+
+      <article class="project">
+  <div class="thumb">
+    <span class="flag"><i class="fa-solid fa-shield-halved"></i> Security</span>
+    <img src="images/docu.png" alt="DocuVault Project Screenshot" />
+  </div>
+  <div>
+    <h4>DocuVault – Secure Encrypted Document Vault (2025)</h4>
+    <p class="muted">
+      A cybersecurity-focused document vault built with strong encryption and
+      multi-layer authentication to ensure complete data privacy and protection.
+    </p>
+
+    <ul class="muted" style="margin-top:8px; padding-left:18px;">
+      <li>Engineered a secure vault using AES-256 encryption, preventing unauthorized access through multi-layer authentication.</li>
+      <li>Designed a responsive, animation-driven interface with Tailwind CSS for smooth and intuitive navigation.</li>
+      <li>Implemented password-protected sharing, recycle-bin recovery, and auto-logout for enhanced data privacy.</li>
+      <li>Optimized backend queries and file handling, improving file operation speed by 40%.</li>
+    </ul>
+
+    <div class="chips" style="margin-top:10px;">
+      <span class="chip">Flask</span>
+      <span class="chip">SQLite</span>
+      <span class="chip">Tailwind CSS</span>
+      <span class="chip">AES-256 Encryption</span>
+    </div>
+
+    <div class="cta" style="justify-content: flex-start; margin-top: 12px">
+      <a class="btn" href="#"><i class="fa-brands fa-github"></i>Code</a>
+      <a class="btn" href="#"><i class="fa-solid fa-up-right-from-square"></i>Live</a>
+    </div>
+  </div>
+</article>
+
+
+        <article class="project">
+  <div>
+    <span class="flag"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+    <h4 style="margin-top:10px;">Drowsiness Alert System (2024)</h4>
+    <p class="muted">
+      A real-time computer vision system that detects driver drowsiness using
+      eye-blink monitoring and instantly alerts the user to prevent accidents.
+    </p>
+
+    <ul class="muted" style="margin-top:8px; padding-left:18px;">
+      <li>Developed a computer-vision model for real-time eye-blink detection with 92% accuracy in identifying drowsiness.</li>
+      <li>Integrated an automated alert system using Pygame, reducing response time to microseconds for immediate user notification.</li>
+      <li>Streamlined the frame-processing pipeline for high-speed inference on standard laptop hardware.</li>
+    </ul>
+
+    <div class="chips" style="margin-top:10px;">
+      <span class="chip">Python</span>
+      <span class="chip">OpenCV</span>
+      <span class="chip">Computer Vision</span>
+      <span class="chip">Pygame</span>
+    </div>
+
+    <div class="cta" style="justify-content: flex-start; margin-top: 12px">
+      <a class="btn" href="#"><i class="fa-brands fa-github"></i>Code</a>
+      <a class="btn" href="#"><i class="fa-solid fa-up-right-from-square"></i>Live</a>
+    </div>
+  </div>
+</article>
+
+
+    <!-- Contact -->
+    <section id="contact" class="container contact">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <div class="underline"></div>
+        <p class="muted" style="text-align: center; max-width: 720px">
+          Ready to collaborate on your next project? Let's discuss how we can
+          bring your ideas to life.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="grid" style="gap: 12px">
+          <div class="info-item">
+            <i class="fa-regular fa-envelope"></i>
+            <div>
+              <b>Email</b>
+              <div class="muted">sumanthnarisetty38@gmail.com</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <b>Location</b>
+              <div class="muted">Karnataka, India</div>
+            </div>
+          </div>
+
+          <div class="cta" style="justify-content: flex-start">
+            <a
+              class="btn"
+              href="https://github.com/sumanth24111"
+              target="_blank"
+              rel="noreferrer"
+              ><i class="fa-brands fa-github"></i>GitHub</a
+            >
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/narisetty-sumanth-44968631b"
+              target="_blank"
+              rel="noreferrer"
+              ><i class="fa-brands fa-linkedin"></i>LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Narisetty Sumanth. Built with ♥, Neo‑Dark UI,
+        and clean CSS.
+      </div>
+    </footer>
+
+    <!-- Floating -->
+    <a class="fab top" href="#home" data-tip="Back to top"
+      ><i class="fa-solid fa-arrow-up"></i
+    ></a>
+    <div class="socials">
+      <a class="fab" href="mailto:sumanthnarisetty38@gmail.com" data-tip="Email"
+        ><i class="fa-regular fa-envelope"></i
+      ></a>
+      <a class="fab" href="#contact" data-tip="Contact"
+        ><i class="fa-regular fa-message"></i
+      ></a>
+    </div>
+
+    <script>
+      // Smooth scroll for older browsers
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          if (id.length > 1) {
+            e.preventDefault();
+            document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Fake form handler (no backend) – shows a toast
+      function sendMessage(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const msg = document.getElementById("message").value.trim();
+        const text = `Thanks ${name || "friend"}! I'll reply to ${email}.`;
+        toast(text);
+        e.target.reset();
+      }
+
+      function toast(text) {
+        const t = document.createElement("div");
+        t.textContent = text;
+        t.style.cssText = `position:fixed;left:50%;bottom:26px;transform:translateX(-50%);padding:12px 16px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:rgba(14,22,40,.92);color:#e7ebf7;z-index:99`;
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = "0";
+          t.style.transition = "opacity .4s";
+        }, 1800);
+        setTimeout(() => t.remove(), 2400);
+      }
+    </script>
+  </body>
+</html>
