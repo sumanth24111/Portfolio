@@ -705,6 +705,92 @@ body.light .fab {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
+/* ===== LIGHT MODE FIXES ===== */
+
+body.light {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+/* Remove dark glow in hero */
+body.light .hero {
+  background: none;
+}
+
+/* Make cards white */
+body.light .card,
+body.light .service,
+body.light .project,
+body.light .info-item,
+body.light .edu-item,
+body.light .exp-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar background */
+body.light header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+/* Fix text colors */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light b {
+  color: #0f172a;
+}
+
+body.light p,
+body.light .muted {
+  color: #475569;
+}
+
+/* Fix skill section header bars */
+body.light .badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Fix tech chips */
+body.light .chip {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+/* Fix buttons */
+body.light .btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+body.light .btn.primary {
+  color: white;
+}
+
+/* Fix input fields */
+body.light input,
+body.light textarea {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Remove dark section gaps */
+body.light section {
+  background: transparent;
+}
+
+/* Footer fix */
+body.light footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #475569;
+}
 
     </style>
     
