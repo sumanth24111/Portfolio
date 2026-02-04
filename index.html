@@ -78,7 +78,18 @@
           ),
           linear-gradient(180deg, var(--bg-0) 0%, #09101c 40%, #080e18 100%);
         line-height: 1.6;
+        transition: background 0.4s ease, color 0.3s ease;
       }
+      body.light {
+  --bg-0: #f5f7fb;
+  --bg-1: #ffffff;
+  --bg-2: #e9eef7;
+  --txt-0: #0f172a;
+  --txt-1: #475569;
+  --muted: #cbd5e1;
+  --card: #ffffff;
+}
+
       a {
         color: inherit;
         text-decoration: none;
@@ -647,6 +658,9 @@
           <a class="btn ghost" href="mailto:sumanthnarisetty38@gmail.com"
             ><i class="fa-regular fa-envelope"></i><span>Email</span></a
           >
+          <button id="themeToggle" class="btn ghost" aria-label="Toggle theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
         </nav>
       </div>
     </header>
@@ -1046,6 +1060,27 @@
         }, 1800);
         setTimeout(() => t.remove(), 2400);
       }
+      const toggleBtn = document.getElementById("themeToggle");
+const icon = toggleBtn.querySelector("i");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+  icon.classList.replace("fa-moon", "fa-sun");
+}
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  if (document.body.classList.contains("light")) {
+    icon.classList.replace("fa-moon", "fa-sun");
+    localStorage.setItem("theme", "light");
+  } else {
+    icon.classList.replace("fa-sun", "fa-moon");
+    localStorage.setItem("theme", "dark");
+  }
+});
+
     </script>
   </body>
 </html>
