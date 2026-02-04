@@ -632,6 +632,79 @@
   border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
 }
+      /* ================= LIGHT MODE FULL FIX ================= */
+
+body.light {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+/* Remove dark glow in hero */
+body.light .hero {
+  background: none;
+}
+
+/* Cards, sections, and containers */
+body.light .card,
+body.light .service,
+body.light .project,
+body.light .info-item,
+body.light .edu-item,
+body.light .exp-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar background */
+body.light header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+/* Text colors */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light b {
+  color: #0f172a;
+}
+
+body.light p,
+body.light .muted,
+body.light .chip {
+  color: #475569;
+}
+
+/* Buttons */
+body.light .btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+body.light .btn:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light .btn.primary {
+  color: white;
+}
+
+/* Forms */
+body.light input,
+body.light textarea {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Floating buttons */
+body.light .fab {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 
     </style>
     
