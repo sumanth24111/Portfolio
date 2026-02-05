@@ -846,6 +846,100 @@ body.light .btn.primary {
     box-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
   }
 }
+      /* ================= MOBILE RESPONSIVE FIXES ================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR STACK */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .nav .links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav .links a,
+  .nav .links .btn,
+  .nav .links button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    padding: 60px 0 30px;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero .subtitle {
+    font-size: 16px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin: 12px 0 20px;
+  }
+
+  .hero .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ABOUT SECTION STACK */
+  .about {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about img {
+    max-width: 260px;
+    margin: auto;
+  }
+
+  /* SKILLS GRID STACK */
+  .skills .row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* PORTFOLIO STACK */
+  .portfolio .row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CONTACT STACK */
+  .contact .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* FLOATING BUTTONS SMALLER */
+  .fab {
+    width: 38px;
+    height: 38px;
+  }
+
+  .socials {
+    right: 10px;
+    bottom: 12px;
+  }
+
+  /* SECTION TITLES */
+  .section-title h2 {
+    font-size: 20px;
+  }
+}
+
 
   
 
